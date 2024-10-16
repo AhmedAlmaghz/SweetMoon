@@ -3,7 +3,7 @@ title: تمر العجوة الفاخر
 slug: ajwa
 price: 10000
 description: تمر العجوة من أجود أنواع التمور المتوفرة في السوق، يتميز بطعمه الحلو وقوامه اللين.
-image: /images/ajwa.jpg
+image: /images/products/ajwa.jpg
 ---
 
 ## تفاصيل المنتج

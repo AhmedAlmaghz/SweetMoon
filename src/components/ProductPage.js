@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import HeroSection from './HeroSection';
 
 const ProductPage = () => {
   const { slug } = useParams();
@@ -13,7 +14,9 @@ const ProductPage = () => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(`/pages/products/${slug}.md`);
-        // const response = await fetch(file.default);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const text = await response.text();
 
         const metaDataRegex = /---\n([\s\S]*?)\n---/;
@@ -24,14 +27,14 @@ const ProductPage = () => {
             .split('\n')
             .reduce((acc, line) => {
               const [key, value] = line.split(': ');
-              acc[key.trim()] = value.trim();
+              acc[key.trim()] = value ? value.trim() : ''; // Ensure value is not undefined
               return acc;
             }, {});
 
           setMetadata(metaData);
-          setContent(text.replace(metaDataRegex, ''));
+          setContent(text.replace(metaDataRegex, '').trim());
         } else {
-          setContent(text);
+          setContent(text.trim());
         }
       } catch (err) {
         setError(true);
@@ -57,22 +60,39 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="container mx-auto py-16">
-      <h1 className="text-3xl font-bold mb-6 animate-fade-in-up">{metadata.title || 'تفاصيل المنتج'}</h1>
-      
-      {metadata.image && (
-        <img
-          src={metadata.image}
-          alt={metadata.title}
-          className="w-full h-64 object-cover mb-6 rounded-lg transform transition-transform duration-700 hover:scale-105 animate-fade-in-up"
-          loading="lazy"
-        />
-      )}
+    <>
+      <HeroSection />
+      <section
+        className="py-16 text-white"
+        style={{
+          backgroundImage: `url(${metadata.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'bottom',
+        }}
+      >
+        <div className="container mx-auto text-center py-16">
+          <h1 className="text-5xl font-bold mb-4">{metadata.title}</h1>
+          <p className="text-xl">{metadata.description}</p>
+        </div>
+      </section>
 
-      <div className="prose animate-fade-in-up">
-        <ReactMarkdown>{content}</ReactMarkdown>
+      <div className="container mx-auto py-16">
+        <h1 className="text-3xl font-bold mb-6 animate-fade-in-up">{metadata.title || 'تفاصيل المنتج'}</h1>
+
+        {metadata.image && (
+          <img
+            src={metadata.image}
+            alt={metadata.title}
+            className="w-full h-64 object-cover mb-6 rounded-lg transform transition-transform duration-700 hover:scale-105 animate-fade-in-up"
+            loading="lazy"
+          />
+        )}
+
+        <div className="prose animate-fade-in-up">
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

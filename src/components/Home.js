@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       {/* قسم البطل (Hero Section) */}
-      <section id="hero" className="py-16 bg-gray-100">
+      <section id="hero" >
         <Hero />
       </section>
 

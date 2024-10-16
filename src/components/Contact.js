@@ -1,10 +1,14 @@
 import React from 'react';
+import HeroSection from './HeroSection';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 bg-gray-100">
+    <>
+    <HeroSection />
+    
+    <section id="contact">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8">تواصل معنا</h2>
+        <h2 className="text-4xl font-bold mb-8 text-white">تواصل معنا</h2>
         <form className="max-w-lg mx-auto">
           <div className="mb-6">
             <input
@@ -35,6 +39,7 @@ const Contact = () => {
         </form>
       </div>
     </section>
+    </>
   );
 };
 

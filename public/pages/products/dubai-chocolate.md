@@ -2,8 +2,8 @@
 title: شوكلاته دبي مون
 slug: dubai-chocolate
 price: 500
-description: شوكلاته دبي مون من أفخر أنواع الشوكلاته  محشية بكرمة الفستق الحلبي 
-image: /images/swiss-chocolate.jpg
+description: شوكلاته سويت مون دبي من أفخر أنواع الشوكلاته  محشية بالكنافة مع كريمة الفستق الحلبي 
+image: /images/products/chocolate.jpg
 ---
 
 ## تفاصيل المنتج
