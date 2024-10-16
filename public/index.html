@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="سويت مون هو مشروع رائد في تقديم منتجات غذائية متميزة تجمع بين الجودة العالية والتصميم الأنيق. نلتزم باستخدام أفضل المواد الأولية المتوفرة في السوق لتقديم تجربة غذائية فريدة تلبي احتياجات عملائنا وتفوق توقعاتهم."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,7 +24,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>SweetMoon سويت مون - غذائك المضمون..!</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +39,28 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyD5Z6rNXp5VQNy654fDZhqJkSJq-bSpANY",
+        authDomain: "sweetmoon-2024.firebaseapp.com",
+        projectId: "sweetmoon-2024",
+        storageBucket: "sweetmoon-2024.appspot.com",
+        messagingSenderId: "755860160486",
+        appId: "1:755860160486:web:e8ef2596435ddb59f0a027",
+        measurementId: "G-LDGXSRPD5R"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
