@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const slides = [
   {
@@ -64,12 +65,12 @@ const Hero = () => {
         <div className="container mx-auto h-full flex flex-col justify-center items-center relative z-10 text-center">
           <h1 className="text-5xl font-bold text-white drop-shadow-lg animate-fade-in">{title}</h1>
           <p className="text-xl text-white mt-4 drop-shadow-lg animate-fade-in-delay">{description}</p>
-          <a
-            href={buttonLink}
+          <Link
+            to={buttonLink}
             className="mt-8 inline-block bg-primary text-white py-3 px-6 rounded-full shadow-lg hover:bg-secondary transition duration-300 animate-bounce"
           >
             {buttonText}
-          </a>
+          </Link>
   
           {/* أزرار التنقل */}
           <button

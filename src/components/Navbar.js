@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <img src="/images/logo/logo.png" alt="Logo" className="h-8 w-8 mr-2" />
           <h1 className={`text-2xl font-bold ${
-        scroll ? 'text-red-800' : 'text-gray-100'}`}>SweetMoon</h1>
+        scroll ? 'text-red-800' : 'text-gray-100'}`}>SWEET MOON | سويت مون</h1>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-red-800 hover:text-red-600">
@@ -50,9 +50,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a href="/locations" className="hover:text-gray-900 transition-colors duration-200">
+            <Link to="/locations" className="hover:text-gray-900 transition-colors duration-200">
               أماكن التواجد
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/products" className="hover:text-gray-900 transition-colors duration-200">
